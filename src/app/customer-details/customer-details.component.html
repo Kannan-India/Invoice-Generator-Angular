@@ -1,0 +1,55 @@
+<div class="col-lg-12">
+  <div class="row">
+    <!-- Customer Details -->
+    <div class="col-lg-8 col-md-12">
+      <div class="row">
+
+        <!-- Header -->
+        <div class="col-lg-12" >
+          <h5>Customer Details
+            <span style="font-size: 14px;" *ngIf='customerDetails.id'> - {{customerDetails.company?"Company":"Individual"}}</span></h5>
+        </div>
+
+        <!-- Body -->
+        <div class="form-group col-lg-6 col-md-6" >
+          <span style="vertical-align: bottom;">{{ customerDetails.name }}</span>
+        </div>
+        <div class="form-group col-lg-6 col-md-6">
+          <span>{{ customerDetails.phone }}</span>
+        </div>
+        <div class="form-group col-lg-6 col-md-6">
+          <span>{{ customerDetails.email }}</span>
+        </div>
+        <div class="form-group col-lg-6 col-md-6">
+          <span>{{ customerDetails.gst }}</span>
+        </div>
+
+      </div>
+    </div>
+    <!-- Customer Details End -->
+
+    <!-- Customer Address -->
+    <div class="col-lg-4">
+      <div class="row">
+
+        <!-- Header -->
+        <div class="col-lg-12">
+          <h5>Address</h5>
+        </div>
+
+        <!-- Body -->
+        <div class="form-group col-lg-12">
+          <span>{{ customerDetails.address.doorNo }}, {{ customerDetails.address.street }},
+            {{customerDetails.address.area}}
+          </span>
+        </div>
+        <div class="form-group col-lg-12">
+          <span>{{ customerDetails.address.city }}, {{ customerDetails.address.state }},
+            {{customerDetails.address.country}}, {{customerDetails.address.pincode}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Customer address End -->
+</div>
+</div>

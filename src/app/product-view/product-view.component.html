@@ -1,0 +1,19 @@
+<div class="container-fluid col-lg-12">
+    <div class="row">
+        <div class="card col-lg-6" style="width: 18rem; margin: 10px;" *ngFor="let product of productData">
+            <div class="card-body">
+                <h5 class="card-title">{{ product['itemName'] }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{'id:'+ product['id'] }}</h6>
+                <p class="card-text">{{ 'Product Type : ' + product['itemType'] }}</p>
+                <p class="card-text">{{ 'Purchase Price : ' + product['purchasePrice'] }}</p>
+                <p class="card-text">{{ 'Sales Price : ' + product['salesPrice'] }}</p>
+                <p class="card-text">{{ 'HSN : ' + product['hsn'] }}</p>
+                <p class="card-text">{{ 'GST : ' + product['gst'] }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-grid fixed-bottom" style="margin: 0.5%;">
+    <button routerLink="/product" class="btn btn-primary" type="button">Add Item</button>
+</div>

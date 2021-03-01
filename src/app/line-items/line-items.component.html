@@ -1,0 +1,178 @@
+<!-- Line Items  -->
+<div class="row">
+  <div class="col-lg-12">
+    <h5>Line Items</h5><hr>
+  </div>
+
+  <!-- table container -->
+  <div class="col-lg-12" style="overflow: auto;">
+    <table class="table table-striped" style="overflow: auto;">
+      <thead>
+        <!-- table headings -->
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Tax Rate</th>
+          <th>Total Price</th>
+          <th style="white-space: nowrap;"></th>
+        </tr>
+      </thead>
+
+      <!-- If the invoice is a fresh invoice -->
+      <tbody *ngIf="this.isFreshInvoice()">
+
+        <!-- Row to add fresh line items to invoice object   -->
+        <tr>
+
+          <!-- Select Product  -->
+          <!-- update Selected product details onchange -->
+          <td>
+            <select name="productId" id="productId" class="form-control form-control-sm"
+              (change)="onProductChange($event.target.value)">
+              <option value="" disabled selected hidden>Select the Product</option>
+              <option *ngFor="let product of productList" value="{{ product.id }}">
+                {{product.name}}
+              </option>
+            </select>
+          </td>
+
+          <!-- quantity -->
+          <!-- update totalPrice on change -->
+          <td>
+            <input type="number" class="form-control form-control-sm"
+            [(ngModel)]="quantity"
+            (ngModelChange)="onQuantityChange()">
+          </td>
+
+          <!-- price  -->
+          <td>
+            <input type="number" class="form-control form-control-sm" disabled
+              value="{{ (selectedProductDetails.price)?selectedProductDetails.price:undefined }}">
+          </td>
+
+          <!-- tax rate  -->
+          <td>
+            <input type="number" class="form-control form-control-sm" disabled
+              value="{{ (selectedProductDetails.taxRate)?selectedProductDetails.taxRate:undefined }}">
+          </td>
+
+          <!-- total price  -->
+          <td>
+            <input type="number" class="form-control form-control-sm" [(ngModel)]="totalPrice">
+          </td>
+
+          <!-- Add Button -->
+          <td>
+            <button class="btn btn-success btn-sm" (click)="onFreshAdd()">Add</button>
+          </td>
+        </tr>
+      </tbody>
+
+
+      <!-- if an entry is already present  -->
+      <tbody *ngIf="!this.isFreshInvoice()">
+
+        <!-- Row to show the existing line items -->
+        <tr *ngFor="let lineItem of getLineItems(); let i = index;">
+
+          <!-- Select product -->
+          <!-- To update any changes  -->
+          <td>
+            <select name="productId2" id="productId2" class="form-control form-control-sm"
+              (change)="updateChanges(i, $event.target.value)">
+              <option
+                *ngFor="let product of productList"
+                value="{{ product.id }}"
+                [selected]="product.id == lineItem.productId">
+                {{product.name}}
+              </option>
+            </select>
+          </td>
+          <td>
+            <input type="text" name="quantity" id="quantity" class="form-control form-control-sm"
+            value="{{ lineItem.quantity }}" (input)="onQuantityUpdate(i, $event.target.value)">
+          </td>
+          <td>
+            <input type="number" class="form-control form-control-sm" disabled
+              value="{{ lineItem.price }}">
+          </td>
+          <td>
+            <input type="number" class="form-control form-control-sm" disabled
+            value="{{ lineItem.taxRate }}">
+          </td>
+          <td>
+            <input type="number" class="form-control form-control-sm"
+            value="{{lineItem.totalPrice}}" (input)="onTotalPriceUpdate(i, $event.target.value)">
+          </td>
+          <td style="white-space: nowrap;">
+            <!-- <button class="btn btn-primary btn-sm">Edit</button> -->
+            <!-- delete -->
+            <button class="btn btn-danger btn-sm"
+            (click)="deleteItem(i)">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <!-- <button *ngIf="i>=getLineItems().length"
+              class="btn btn-success">
+
+            </button> -->
+          </td>
+        </tr>
+
+        <!-- Row to add new line items to invoice object   -->
+        <tr>
+
+          <!-- Select Product  -->
+          <!-- update Selected product details onchange -->
+          <td>
+            <select name="productId3" id="productId3" class="form-control form-control-sm"
+              (change)="onProductChange($event.target.value)">
+              <option value="" disabled selected hidden>Select the Product</option>
+              <option *ngFor="let product of productList" value="{{ product.id }}">
+                {{product.name}}
+              </option>
+            </select>
+          </td>
+
+          <!-- quantity -->
+          <!-- update totalPrice on change -->
+          <td>
+            <input type="number" class="form-control form-control-sm"
+            [(ngModel)]="quantity"
+            (ngModelChange)="onQuantityChange()">
+          </td>
+
+          <!-- price  -->
+          <td>
+            <input type="number" class="form-control form-control-sm" disabled
+              value="{{ (selectedProductDetails.price)?selectedProductDetails.price:undefined }}">
+          </td>
+
+          <!-- tax rate  -->
+          <td>
+            <input type="number" class="form-control form-control-sm" disabled
+              value="{{ (selectedProductDetails.taxRate)?selectedProductDetails.taxRate:undefined }}">
+          </td>
+
+          <!-- total price  -->
+          <td>
+            <input type="number" class="form-control form-control-sm" [(ngModel)]="totalPrice">
+          </td>
+
+          <!-- Add Button -->
+          <td>
+            <button class="btn btn-success btn-sm" (click)="onFreshAdd()">Add</button>
+          </td>
+        </tr>
+        <tr style="text-align: right;">
+          <td colspan="3"></td>
+          <td><b>Total Amount</b></td>
+          <td><b>{{getTotalAmount() | currency : 'INR'}}</b></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+</div>

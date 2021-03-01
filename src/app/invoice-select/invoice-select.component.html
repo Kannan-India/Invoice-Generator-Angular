@@ -1,0 +1,8 @@
+<div class="form-group">
+  <select name="select-invoice" id="select-invoice" class="form-control"
+  (change)="onChange($event.target.value)">
+    <option value="" disabled selected hidden>Select the invoice</option>
+    <option *ngFor="let invoice of invoiceList"
+    value="{{ invoice.invoiceNo }}">{{ invoice.invoiceNo }} / {{ invoice.date}}</option>
+  </select>
+</div>

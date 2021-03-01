@@ -1,0 +1,6 @@
+<!-- Date Picker -->
+<div class="form-group">
+  <input type="date" class="form-control form-control-sm"
+  name="date" id="date" style="padding:15px" [value]="getSelectedDate()"
+  [(ngModel)]="date" (change)="onDateInput()">
+</div>

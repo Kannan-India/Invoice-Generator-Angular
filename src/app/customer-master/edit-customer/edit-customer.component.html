@@ -1,0 +1,118 @@
+<div class="container"  >
+  <div class="row">
+    <div class="card col-lg-12">
+      <div class="card-header" style="background-color: white;">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6">
+              <h4>Edit Customer</h4>
+            </div>
+            <div class="col-lg-6">
+              <app-customer-select></app-customer-select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6" >
+              <div class="form-group">
+                <label for="">Customer Name</label>
+                <input type="text" class="form-control" placeholder="Customer Name"
+                [(ngModel)]="customerDetails.name">
+              </div>
+
+              <div class="form-group">
+                <label for="">Contact No</label>
+                <input type="number" class="form-control" placeholder="Contact No"
+                [(ngModel)]="customerDetails.phone">
+              </div>
+              <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" class="form-control" placeholder="Email"
+                [(ngModel)]="customerDetails.email">
+              </div>
+              <div class="form-group">
+                <label for="">GST</label>
+                <input type="text" class="form-control" placeholder="GST"
+                [(ngModel)]="customerDetails.gst">
+              </div>
+              <div class="form-group">
+                <label for="">Individual / Company</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="isCompany" id="isCompany1" [value]="false"
+
+                  [(ngModel)]="customerDetails.company">
+                  <label class="form-check-label" for="isCompany1">
+                    Individual
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="isCompany" id="isCompany2" [value]="true"
+
+                  [(ngModel)]="customerDetails.company">
+                  <label class="form-check-label" for="isCompany2">
+                    Company
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="">Door No</label>
+                  <input type="text" class="form-control" placeholder="Door No"
+                  [(ngModel)]="customerDetails.address.doorNo">
+                </div>
+
+                <div class="form-group col-lg-6">
+                  <label for="">Street</label>
+                  <input type="text" class="form-control" placeholder="Street"
+                  [(ngModel)]="customerDetails.address.street">
+                </div>
+
+                <div class="form-group col-lg-12">
+                  <label for="">Area</label>
+                  <input type="text" class="form-control" placeholder="Area"
+                  [(ngModel)]="customerDetails.address.area">
+                </div>
+
+                <div class="form-group col-lg-12">
+                  <label for="">City</label>
+                  <input type="text" class="form-control" placeholder="City"
+                  [(ngModel)]="customerDetails.address.city">
+                </div>
+
+                <div class="form-group col-lg-6">
+                  <label for="">State</label>
+                  <input type="text" class="form-control" placeholder="State"
+                  [(ngModel)]="customerDetails.address.state">
+                </div>
+
+                <div class="form-group col-lg-6">
+                  <label for="">Pincode</label>
+                  <input type="number" class="form-control" placeholder="Pincode"
+                  [(ngModel)]="customerDetails.address.pincode">
+                </div>
+
+                <div class="form-group col-lg-12">
+                  <label for="">Country</label>
+                  <input type="text" class="form-control" placeholder="Country"
+                  [(ngModel)]="customerDetails.address.country">
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group" style="margin-bottom: 0px;">
+            <button class="btn btn-primary btn-block"
+            (click)="onSubmit()">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

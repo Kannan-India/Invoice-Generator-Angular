@@ -1,0 +1,171 @@
+<div class="container" style="margin-top: 10px">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6"><h5>Customer Details</h5></div>
+              <div class="col-lg-6"><app-customer-select></app-customer-select></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- id -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">Id</div>
+              <div class="col-lg-6">{{ customerDetails.id }}</div>
+            </div>
+          </div>
+          <!-- name -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">Name</div>
+              <div class="col-lg-6">{{ customerDetails.name }}</div>
+            </div>
+          </div>
+          <!-- Contact No -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">Contact No</div>
+              <div class="col-lg-6">{{ customerDetails.phone }}</div>
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">Email</div>
+              <div class="col-lg-6">{{ customerDetails.email }}</div>
+            </div>
+          </div>
+          <!-- GST -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">GST No</div>
+              <div class="col-lg-6">{{ customerDetails.gst }}</div>
+            </div>
+          </div>
+          <!-- Status -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">Status</div>
+              <div class="col-lg-6">{{ customerDetails.company?"Company":"Individual" }}</div>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-11" style="text-align: center">Address</div>
+              <div class="col-lg-1" style="background-color: #343A40;"></div>
+            </div>
+          </div>
+
+          <!-- Door No -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">Door No</div>
+              <div class="col-lg-6">{{ customerDetails.address.doorNo }}</div>
+            </div>
+          </div>
+          <!-- Street -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">Street</div>
+              <div class="col-lg-6">{{ customerDetails.address.street }}</div>
+            </div>
+          </div>
+          <!-- Area -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">Area</div>
+              <div class="col-lg-6">{{ customerDetails.address.area }}</div>
+            </div>
+          </div>
+          <!-- City -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">City</div>
+              <div class="col-lg-6">{{ customerDetails.address.city }}</div>
+            </div>
+          </div>
+          <!-- State -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">State</div>
+              <div class="col-lg-6">{{ customerDetails.address.state }}</div>
+            </div>
+          </div>
+          <!-- Pincode -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">Pincode</div>
+              <div class="col-lg-6">{{ customerDetails.address.pincode }}</div>
+            </div>
+          </div>
+          <!-- Country -->
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">Country</div>
+              <div class="col-lg-6">{{ customerDetails.address.country }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <table class="table table-striped" >
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Id</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let customer of customerList; let i=index">
+      <td>{{ i+1 }}</td>
+      <td><b>{{customer.name}}</b></td>
+      <td>{{customer.id}}</td>
+    </tr>
+     <tr>
+      <td>6</td>
+      <td>name</td>
+      <td>1233215487841</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>name</td>
+      <td>1233215487841</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>name</td>
+      <td>1233215487841</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>name</td>
+      <td>1233215487841</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>name</td>
+      <td>1233215487841</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>name</td>
+      <td>1233215487841</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>name</td>
+      <td>1233215487841</td>
+    </tr>
+  </tbody>
+</table> -->

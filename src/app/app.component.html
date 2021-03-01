@@ -1,0 +1,123 @@
+<!-- <app-invoice></app-invoice> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-family: mosterrat-regular;">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home" data-toggle="collapse" data-target=".navbar-collapse.show"><b>Invoice</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- data-toggle="collapse" data-target=".navbar-collapse" -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <!-- navbar item dropdown-->
+        <li class="nav-item dropdown">
+
+          <!-- dropdown toggler -->
+          <a href="#"
+            class="nav-link dropdown-toggle active"
+            id="navbarDropdownMenuLink"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            routerLinkActive="active">
+            Invoice
+          </a>
+
+        <!-- dropdown menu -->
+        <div
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdownMenuLink">
+
+          <!-- dropdown item -->
+          <a class="dropdown-item" routerLink="/invoice" routerLinkActive="active">Create</a>
+          <a class="dropdown-item" routerLink="/invoice-edit" routerLinkActive="active">Edit</a>
+          <a class="dropdown-item" href="#" routerLinkActive="active">View</a>
+          <a class="dropdown-item" href="#" routerLinkActive="active">Delete</a>
+
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+
+        <!-- dropdown toggler -->
+        <a href="#"
+          class="nav-link dropdown-toggle active"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          role="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          routerLinkActive="active">
+          Customer
+        </a>
+
+        <!-- dropdown menu -->
+        <div
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdownMenuLink">
+
+          <!-- dropdown item -->
+          <a class="dropdown-item" routerLink="/customer-add" routerLinkActive="active">Create</a>
+          <a class="dropdown-item" routerLink="/customer-edit" routerLinkActive="active">Edit</a>
+          <a class="dropdown-item" routerLink="/customer-view" routerLinkActive="active">View</a>
+          <a class="dropdown-item" routerLink="/customer-delete" routerLinkActive="active">Delete</a>
+
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+
+        <!-- dropdown toggler -->
+        <a href="#"
+          class="nav-link dropdown-toggle active"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          role="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          routerLinkActive="active">
+          Product
+        </a>
+
+        <!-- dropdown menu -->
+        <div
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdownMenuLink">
+
+          <!-- dropdown item -->
+          <a class="dropdown-item" routerLink="/product-add" routerLinkActive="active">Create</a>
+          <a class="dropdown-item" routerLink="/product-edit" routerLinkActive="active">Edit</a>
+          <a class="dropdown-item" routerLink="/product-view" routerLinkActive="active">View</a>
+          <a class="dropdown-item" routerLink="/product-delete" routerLinkActive="active">Delete</a>
+
+        </div>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/about" class="nav-link active" routerLinkActive="active" aria-current="page">About</a>
+      </li>
+        <!--
+          <li class="nav-item">
+            <a routerLink="/product" class="nav-link active" aria-current="page">Product Page</a>
+          </li>
+         <li class="nav-item">
+          <a routerLink="/productView" class="nav-link active" aria-current="page">Product</a>
+        </li><li class="nav-item">
+          <a routerLink="/party" class="nav-link active" aria-current="page">Party</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/partyView" class="nav-link active" aria-current="page">Party</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/invoice" class="nav-link" routerLinkActive="active" aria-current="page">Invoice</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/about" class="nav-link active" aria-current="page">About</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+

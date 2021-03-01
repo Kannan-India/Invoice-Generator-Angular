@@ -1,0 +1,65 @@
+<!-- Invoice Container -->
+<div class="container">
+  <div class="row" style="margin-top: 10px;">
+
+    <!-- Invoice card -->
+    <div class="card col-lg-12" style="padding:20px 20px; height: 88vh; overflow: auto;">
+      <div class="row">
+
+        <!-- Card Header  -->
+        <div class="col-lg-12">
+          <h3>Invoice</h3><hr>
+        </div>
+
+        <!-- Invoice Card Body - Customer -->
+        <div class="col-lg-12">
+            <div class="row">
+
+              <!-- Select Customer  -->
+              <div class="col-lg-4 col-md-6">
+                <app-customer-select ></app-customer-select>
+              </div>
+
+              <!-- Date Picker  -->
+              <div class="col-lg-4 col-md-6">
+                <app-date-picker></app-date-picker>
+              </div>
+
+              <!-- Save Button  -->
+              <div class="col-lg-4 col-md-12">
+                <div class="row">
+                  <div class="col-lg-6 col-md-0"></div>
+                  <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                      <button class="form-control btn btn-primary btn-sm"
+                        (click)="onSave()">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Customer Details  -->
+              <div class="col-lg-12">
+                <div class="row">
+                  <app-customer-details ></app-customer-details>
+                </div>
+              </div>
+              <!-- Customer Details  End-->
+
+            </div>
+        </div>
+        <!-- Invoice Card Body - Customer End-->
+
+        <!-- Invoice Card Body - Line Items -->
+        <div class="col-lg-12">
+          <app-line-items></app-line-items>
+        </div>
+        <!-- Invoice Card Body - Line Items End -->
+
+      </div>
+    </div>
+    <!-- Invoice Card End  -->
+
+  </div>
+</div>
+<!-- Invoice Container End  -->

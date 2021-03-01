@@ -1,0 +1,19 @@
+<div class="container-fluid col-lg-12">
+  <div class="row">
+    <div class="card col-lg-6" style="width: 18rem; margin: 10px;" *ngFor="let party of partyData">
+      <div class="card-body">
+        <h5 class="card-title">{{ party['partyName'] }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{'id:'+ party['id'] }}</h6>
+        <p class="card-text">{{ 'Party Type : ' + party['partyType'] }}</p>
+        <p class="card-text">{{ 'Phone Number : ' + party['phoneNumber'] }}</p>
+        <p class="card-text">{{ 'City : ' + party['city'] }}</p>
+        <p class="card-text">{{ 'State : ' + party['state'] }}</p>
+        <p class="card-text">{{ 'Postal Code : ' + party['postalCode'] }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-grid fixed-bottom" style="margin: 0.5%;">
+  <button routerLink="/party" class="btn btn-primary" type="button">Add Item</button>
+</div>

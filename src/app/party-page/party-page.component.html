@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <h2>Add Party</h2>
+  <form [formGroup]="addPartyForm" (ngSubmit) = "onSubmit(addPartyForm)">
+    <div class="form-group">
+      <label>Party Name</label>
+      <input formControlName="partyName" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Party Type</label>
+      <input formControlName="partyType" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input formControlName="phoneNumber" type="text" class="form-control" />
+    </div>
+    <hr>
+    <div>
+      <label>Address : City</label>
+      <input formControlName="city" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>State</label>
+      <input formControlName="state" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Postal Code</label>
+      <input formControlName="postalCode" type="text" class="form-control" />
+    </div>
+
+    <button style="margin-top: 1%" class="btn btn-primary" type="submit">
+      Save
+    </button>
+  </form>
+</div>

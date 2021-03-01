@@ -1,0 +1,12 @@
+<!-- Select Customer -->
+<div class="form-group ">
+  <select name="customer" id="customer" class="form-control form-control-sm"
+    (change)="onCustomerSelect($event.target.value)">
+    <option value="" disabled selected hidden>Select the Customer</option>
+    <option
+    *ngFor = "let customer of customerList"
+    value="{{customer['id']}}"
+    [selected]="getSelectedCustomer() == customer['id']"
+    >{{ customer['name'] }}</option>
+  </select>
+</div>
