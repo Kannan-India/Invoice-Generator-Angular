@@ -32,6 +32,7 @@ import { AddProductComponent } from './product-master/add-product/add-product.co
 import { EditProductComponent } from './product-master/edit-product/edit-product.component';
 import { ViewProductComponent } from './product-master/view-product/view-product.component';
 import { DeleteProductComponent } from './product-master/delete-product/delete-product.component';
+import { TravelRequestLineItemComponent } from './travel-request-line-item/travel-request-line-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,8 @@ import { DeleteProductComponent } from './product-master/delete-product/delete-p
     AddProductComponent,
     EditProductComponent,
     ViewProductComponent,
-    DeleteProductComponent
+    DeleteProductComponent,
+    TravelRequestLineItemComponent
   ],
   imports: [
     BrowserModule,

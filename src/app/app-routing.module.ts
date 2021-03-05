@@ -18,6 +18,7 @@ import { AddProductComponent } from './product-master/add-product/add-product.co
 import { EditProductComponent } from './product-master/edit-product/edit-product.component';
 import { ViewProductComponent } from './product-master/view-product/view-product.component';
 import { DeleteProductComponent } from './product-master/delete-product/delete-product.component';
+import { TravelRequestLineItemComponent } from './travel-request-line-item/travel-request-line-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -38,7 +39,8 @@ const routes: Routes = [
   { path: 'productView', component: ProductViewComponent },
   { path: 'party', component: PartyPageComponent },
   { path: 'partyView', component: PartyViewComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'travel-request-line-item', component: TravelRequestLineItemComponent }
 ];
 
 @NgModule({

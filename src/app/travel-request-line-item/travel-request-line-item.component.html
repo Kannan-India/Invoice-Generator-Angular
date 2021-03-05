@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="card col-lg-12" style="margin-top: 20px; max-height: 88vh; overflow: auto;">
+    	<div class="row">
+
+        <!-- Card Header  -->
+        <div class="col-lg-12">
+          <h3>Travel Request</h3><hr>
+        </div>
+
+        <div class="col-lg-12">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Travel No</th>
+                <th>Travel Request No</th>
+                <th>Travel Request date</th>
+                <th>Travel Start date</th>
+                <th>Travel End date</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody *ngIf="mtransactionform.lineItems.length == 0">
+              <tr>
+                <td><input class="form-control form-control-sm" type="number" [(ngModel)]="lineItem.travNum" placeholder="Travel No"></td>
+                <td><input class="form-control form-control-sm" type="number" [(ngModel)]="lineItem.travelrequestno" placeholder="Travel Request No"></td>
+                <td><input class="form-control form-control-sm" type="date" [(ngModel)]="lineItem.travelrequestdate" ></td>
+                <td><input class="form-control form-control-sm" type="date" [(ngModel)]="lineItem.travelstartdate"></td>
+                <td><input class="form-control form-control-sm" type="date" [(ngModel)]="lineItem.travelenddate"></td>
+                <td><button class="btn btn-sm btn-success" (click)="onAdd()">Add</button></td>
+              </tr>
+            </tbody>
+            <tbody *ngIf="mtransactionform.lineItems.length != 0">
+              <tr *ngFor="let line of mtransactionform.lineItems; let i=index;">
+                <td><input class="form-control form-control-sm" type="number" [(ngModel)]="line.travNum" placeholder="Travel No"></td>
+                <td><input class="form-control form-control-sm" type="number" [(ngModel)]="line.travelrequestno" placeholder="Travel Request No"></td>
+                <td><input class="form-control form-control-sm" type="date" [(ngModel)]="line.travelrequestdate" ></td>
+                <td><input class="form-control form-control-sm" type="date" [(ngModel)]="line.travelstartdate"></td>
+                <td><input class="form-control form-control-sm" type="date" [(ngModel)]="line.travelenddate"></td>
+                <td><button class="btn btn-danger btn-sm"
+                  (click)="deleteItem(i)">
+                    <span aria-hidden="true">&times;</span>
+                  </button></td>
+              </tr>
+              <tr>
+                <td><input class="form-control form-control-sm" type="number" [(ngModel)]="lineItem.travNum" placeholder="Travel No"></td>
+                <td><input class="form-control form-control-sm" type="number" [(ngModel)]="lineItem.travelrequestno" placeholder="Travel Request No"></td>
+                <td><input class="form-control form-control-sm" type="date" [(ngModel)]="lineItem.travelrequestdate" ></td>
+                <td><input class="form-control form-control-sm" type="date" [(ngModel)]="lineItem.travelstartdate"></td>
+                <td><input class="form-control form-control-sm" type="date" [(ngModel)]="lineItem.travelenddate"></td>
+                <td><button class="btn btn-sm btn-success" (click)="onAdd()">Add</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+    	</div>
+    </div>
+  </div>
+</div>
